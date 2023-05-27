@@ -81,7 +81,7 @@ function Chat() {
 
       const newUser = await createUser(messageHistory)
 
-      if (!newUser?.uid) return alert('big shit')
+      if (!newUser?.uid) return console.warn('could not create user')
 
       console.log('CREATED USER ID', newUser)
 

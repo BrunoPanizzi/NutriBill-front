@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "npx http-server ./dist"
+    "start": "npx serve ./dist"
   },
   "dependencies": {
     "openai": "^3.2.1",

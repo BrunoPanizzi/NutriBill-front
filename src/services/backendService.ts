@@ -1,8 +1,10 @@
 const baseUrl = import.meta.env.VITE_BACKEND_URL
 
+console.log('the backend url is', baseUrl)
+
 async function createUser(conversation: string) {
   try {
-    const res = await fetch(`${baseUrl}/createUser`, {
+    const res = await fetch(baseUrl + '/createUser', {
       method: 'POST',
       headers: {
         conversation: JSON.stringify(conversation),
@@ -24,7 +26,7 @@ async function createUser(conversation: string) {
 
 async function getUserInfo(uid: string) {
   try {
-    const res = await fetch(`${baseUrl}/user/${uid}`)
+    const res = await fetch(baseUrl + 'user' + uid)
 
     const data = await res.json()
 
@@ -44,7 +46,7 @@ async function getUserInfo(uid: string) {
 
 async function updateUserInfo(uid: string, conversation: string) {
   try {
-    const res = await fetch(`${baseUrl}/updateUser/${uid}`, {
+    const res = await fetch(baseUrl + 'updateUser' + uid, {
       method: 'POST',
       headers: {
         conversation: JSON.stringify(conversation),
